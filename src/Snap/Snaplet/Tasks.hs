@@ -8,9 +8,19 @@
 --   to - let's say create indexes in Your DB or screen scrape some 
 --   useful data from some service and save it in DB.
 --
---   Every task lives in MonadSnap defined by some Snaplet.
---   That means, that if your web app defines some task, it'll be
---   executed in MonadSnap as if it were a Handler for some route.
+--   Every task is in fact just a handler for route. Those routes 
+--   are hashes for routes so that 'somens:other:cool:task' becomes
+--   a valid route in app.
+--   To create such task in one of Your snaplets (maybe in your app
+--   snaplet) - define route for it using handy 'task' function
+--   that this module reexports.
+--
+--   Running tasks is fairly simple: 
+--   yourapp T snaplet:super:cool arg1=v1 arg2=v2 [-p 1000]
+--   This means that your task command always follows 'T'
+--   If you're running Your app at default port You can specify
+--   different port at the end by using standard -p argument.
+
 module Snap.Snaplet.Tasks( tasksInit,
                            TasksSnaplet,
                            module Snap.Snaplet.Tasks.Utils ) where
