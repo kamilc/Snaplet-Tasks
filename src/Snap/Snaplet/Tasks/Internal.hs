@@ -20,10 +20,13 @@ import           Network.Curl
 --   tries to compile them into task.
 taskFromCommandLine :: IO (Maybe Task)
 taskFromCommandLine = do
-  taskArgs <- return . tail . dropWhile ((/=) "T") =<< getArgs
-  case null taskArgs of
-    True  -> return Nothing
-    False -> return $ Just $ taskForArgs taskArgs
+  _args <- return . dropWhile ((/=) "T") =<< getArgs
+  case _args of
+    [] -> return Nothing
+    xs -> 
+      case null $ tail xs of
+        True  -> return Nothing
+        False -> return $ Just $ taskForArgs xs
   where
     taskForArgs :: [String] -> Task
     taskForArgs args = Task

@@ -8,13 +8,13 @@ import Data.Version (Version(..))
 import System.Environment (getEnv)
 
 version :: Version
-version = Version {versionBranch = [0,1], versionTags = []}
+version = Version {versionBranch = [0,1,1], versionTags = []}
 
 bindir, libdir, datadir, libexecdir :: FilePath
 
 bindir     = "/usr/local/bin"
-libdir     = "/usr/local/lib/snaplet-tasks-0.1/ghc-7.0.3"
-datadir    = "/usr/local/share/snaplet-tasks-0.1"
+libdir     = "/usr/local/lib/snaplet-tasks-0.1.1/ghc-7.0.3"
+datadir    = "/usr/local/share/snaplet-tasks-0.1.1"
 libexecdir = "/usr/local/libexec"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir :: IO FilePath
