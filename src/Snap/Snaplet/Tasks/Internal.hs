@@ -26,7 +26,7 @@ taskFromCommandLine = do
     xs -> 
       case null $ tail xs of
         True  -> return Nothing
-        False -> return $ Just $ taskForArgs xs
+        False -> return $ Just $ taskForArgs $ tail xs
   where
     taskForArgs :: [String] -> Task
     taskForArgs args = Task
