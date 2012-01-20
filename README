@@ -70,3 +70,4 @@ task :: String -> (Handler b v ()) -> (B.ByteString, Handler b v ())
 
 This function takes name of the task ( ex. "db:migrate" ) and a handler
 and returns a tuple that you can use defining your app routes.
+
