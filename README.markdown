@@ -55,13 +55,9 @@ The only difference is that here in Snap - app also listens
 on TCP for connections - and that *we utilize*.
 
 There are two constriants to running tasks:
-1. You can't run them remotely ( meaning that you can't fire
-   app task handler remotely )
-2. Task route is being _hashified_ and the only way to specify
-   task is by using command line app arg switch _T_ 
-   ( ex. T mysupertask or T namespace:second:supertask )
-   The supplied name of task is being hashified again and thus
-   matched with route that responds to exaclty that hash.
+
+1. You can't run them remotely ( meaning that you can't fire app task handler remotely )
+2. Task route is being _hashified_ and the only way to specify task is by using command line app arg switch _T_  ( ex. T mysupertask or T namespace:second:supertask ) The supplied name of task is being hashified again and thus matched with route that responds to exaclty that hash.
 
 This implies that you have to have some tool/function to create
 tasks so that they respond to hashified names. And indeed you have:
