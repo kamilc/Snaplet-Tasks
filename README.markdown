@@ -21,6 +21,7 @@ Build-depends:
 ```
 
 in Application.hs
+
 ```
 import           Snap.Snaplet.Tasks
 
