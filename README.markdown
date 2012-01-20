@@ -59,6 +59,18 @@ There are two constriants to running tasks:
 1. You can't run them remotely ( meaning that you can't fire app task handler remotely )
 2. Task route is being _hashified_ and the only way to specify task is by using command line app arg switch _T_  ( ex. T mysupertask or T namespace:second:supertask ) The supplied name of task is being hashified again and thus matched with route that responds to exaclty that hash.
 
+Example command line usage:
+
+```
+yourapp T db:migrate
+```
+
+Or if you want to run app for tasks on different port:
+
+```
+yourapp T db:migrate -p 1234
+```
+
 This implies that you have to have some tool/function to create
 tasks so that they respond to hashified names. And indeed you have:
 
