@@ -1,17 +1,17 @@
-h2. Snaplet-Tasks
+## Snaplet-Tasks
 
 Snap Framework ( http://snapframework.com ) support for command line
 tasks akin to _Rake_ tasks from _Ruby On Rails_
 
 Depends on Snap 0.7.* and <others>
 
-h3. Installation
+## Installation
 
 ```
 cabal install snaplet-tasks
 ```
 
-h3. Integration
+### Integration
 
 _coolapp.cabal_:
 ```
@@ -20,7 +20,7 @@ Build-depends:
 ```
 
 _Application.hs_:
-```Haskell
+```haskell
 import           Snap.Snaplet.Tasks
 
 -- ( ... some code ... )
@@ -33,7 +33,7 @@ data App = App
 ```
 
 _Site.hs_:
-```Haskell
+```haskell
 app = do
   h  <- nestSnaplet "heist" heist $ do
             heistInit "resources/templates"
