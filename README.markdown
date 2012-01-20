@@ -13,13 +13,14 @@ cabal install snaplet-tasks
 
 ### Integration
 
-_coolapp.cabal_:
+in coolapp.cabal
+
 ```
 Build-depends:
   snaplet-tasks
 ```
 
-_Application.hs_:
+in Application.hs
 ```
 import           Snap.Snaplet.Tasks
 
@@ -32,7 +33,8 @@ data App = App
     }
 ```
 
-_Site.hs_:
+in Site.hs
+
 ```
 app = do
   h  <- nestSnaplet "heist" heist $ do
