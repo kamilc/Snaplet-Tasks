@@ -20,27 +20,26 @@ Build-depends:
 ```
 
 _Application.hs_:
-```haskell
+```
 import           Snap.Snaplet.Tasks
 
--- ( ... some code ... )
+
 
 data App = App
     { _heist :: Snaplet (Heist App)
-    -- ( ... other state ... )
+    
     , _tasks :: Snaplet TasksSnaplet
     }
 ```
 
 _Site.hs_:
-```haskell
+```
 app = do
   h  <- nestSnaplet "heist" heist $ do
             heistInit "resources/templates"
-  -- ( ... some init ... )
   t <- nestSnaplet  "tasks" tasks $
             tasksInit
-  return $ App h .. .. .. t
+  return $ App h  t
 ```
 
 Because we need full app state at disposal in our tasks
